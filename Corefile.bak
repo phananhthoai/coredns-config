@@ -1,0 +1,22 @@
+elofun.local:53 {
+  template IN A duy.local {
+    answer "{{ .Name }} 60 IN A 192.168.1.99"
+  }
+  hosts {
+    web.elofun.local      192.168.1.99
+    db.elofun.local       192.168.1.21
+  }
+}
+.:53 {
+  errors
+  health
+  ready
+  cache 30
+  loop
+  reload
+  forward . 8.8.8.8
+  template IN PTR in-addr.arpa {
+    match ^(?P<d>[0-9]*)[.](?P<c>[0-9]*)[.](?P<b>[0-9]*)[.](?P<a>[0-9]*)[.]in-addr[.]arpa[.]$
+    answer "{{ .Name }} 60 IN PTR duy.local"
+  }
+}
