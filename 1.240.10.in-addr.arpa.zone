@@ -1,0 +1,7 @@
+$ORIGIN 1.240.10.in-addr.arpa.                               
+@               3600 IN SOA  ns1.khanh.com. admin.khanh.com. 2017042745 7200 3600 1209600 84600
+2      			IN PTR     ns1.khanh.com.
+100         IN PTR     master.khanh.com.
+100  				IN PTR     kube-apiserver.khanh.com.
+102  				IN PTR     kube-apiserver.khanh.com.
+104 	 			IN PTR     kube-apiserver.khanh.com.

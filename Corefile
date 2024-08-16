@@ -1,6 +1,13 @@
-elofun.internal:53 {
-	 file /zones/elofun.internal.zone
-	 transfer elofun.internal {
-	 	 to * 192.168.1.99
-	 }
+khanh.com:53 {
+	 file /zones/khanh.com.zone	 
+}
+1.240.10.in-addr.arpa:53 {
+	 file /zones/1.240.10.in-addr.arpa.zone
+}
+.:53 {
+  forward . /etc/resolv.conf
+}
+. {
+  loop
+  forward . 127.0.0.1
 }

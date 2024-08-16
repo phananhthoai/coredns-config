@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  coredns:
+    image: coredns/coredns:latest
+    volumes:
+      - /home/khanh/coredns-config/Corefile:/Corefile
+      - /etc/resolv.conf:/etc/resolv.conf
+      - /home/khanh/coredns-config/khanh.com.zone:/zones/khanh.com.zone
+      - /home/khanh/coredns-config/1.240.10.in-addr.arpa.zone:/zones/1.240.10.in-addr.arpa.zone
+    command:
+      - --conf
+      - /Corefile
+    ports:
+      - "53:53/udp"
