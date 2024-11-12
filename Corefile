@@ -7,7 +7,3 @@ khanh.com:53 {
 .:53 {
   forward . /etc/resolv.conf
 }
-. {
-  loop
-  forward . 127.0.0.1
-}
